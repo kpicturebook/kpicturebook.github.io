@@ -1,8 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 갤러리</title>
+    <style>
+        /* 전체 컨테이너 설정 */
+        .container {
+            display: flex;
+            flex-wrap: wrap; /* 해상도가 낮아지면 다음 줄로 넘김 */
+            justify-content: center; /* 가운데 정렬 */
+            gap: 20px; /* 칸 사이 간격 */
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 각 칸(아이템) 설정 */
+        .item {
+            /* 1줄에 2칸을 위해 50%에서 간격을 뺀 너비 설정 */
+            flex: 0 1 calc(50% - 20px); 
+            min-width: 300px; /* 모바일에서 너무 작아지지 않게 최소 너비 설정 */
+            box-sizing: border-box;
+        }
+
+        /* 이미지 설정 */
+        .item img {
+            width: 100%; /* 칸 너비에 맞춤 */
+            height: auto; /* 비율 유지 */
+            display: block;
+            border-radius: 8px; /* 테두리 둥글게 (선택사항) */
+        }
+
+        /* 모바일 대응: 화면이 작아지면 1줄에 1칸으로 변경 */
+        @media (max-width: 600px) {
+            .item {
+                flex: 0 1 100%;
+            }
+        }
+    </style>
+</head>
 <body>
-  <h1>한국그림책출판협회</h1>
-  <BR>
-  <A HREF="https://drive.google.com/file/d/1rTkixNOmKTtMw90QlI8aVMbR87HN5KVZ/view?usp=sharing">KPPA_RIGHTS_GUIDE_2026.PDF</A>
+
+    <div class="container">
+        <div class="item">
+            <A HREF="https://cafe.naver.com/kpp2020" target="_blank"><img src="https://drive.google.com/file/d/1buhLklV7qlzX0lnbLt5vLUKJ5G44sWW4/view?usp=sharing" alt="KPPA HOMEPAGE"></A>
+        </div>
+        <div class="item">
+            <A HREF="https://drive.google.com/file/d/1rTkixNOmKTtMw90QlI8aVMbR87HN5KVZ/view?usp=drive_link" target="_blank"><img src="https://drive.google.com/file/d/1W_qZuUYawFxaR4pQjOo6L7Ri2HyAEqBP/view?usp=drive_link" alt="KPPA_RIGHTS_GUIDE_2026"></A>
+        </div>
+        </div>
+
 </body>
 </html>
